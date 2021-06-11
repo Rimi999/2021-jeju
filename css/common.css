@@ -11,7 +11,8 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 
 
 /********************** header-wrapper *********************/
-.header-wrapper {background-color: #28354b; color: #f9f9f9;}
+.header-wrapper {font-size: 1em;}
+.header-wrapper > .notice-wrapper {background-color: #28354b; color: #f9f9f9;}
 
 .header-wrapper .notice-wrap {display: flex; align-items: center; padding: 1em 0;}
 .header-wrapper .notice-wrap > .notice-bullet {font-size: 0.875em; color:#b38859; width: 4rem;}
