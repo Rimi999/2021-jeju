@@ -12,6 +12,8 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 .notice-wrap > :last-child {margin-left: auto;}
 .notice-wrap > .notice-bullet {font-size: 0.875em; color:#b38859;}
 .notice-wrap > .notice-title {font-size: 1.25em; margin: 0 0.5em 0 1.5em;}
+.notice-wrap > .bt-down {cursor: pointer;}
+.notice-wrap > .bt-close {cursor: pointer; font-size: 1.75em;}
 
 
 /********************** footer-wrapper *********************/
