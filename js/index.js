@@ -10,24 +10,24 @@ function init() {
 
 
 /*************** 이벤트 등록 *****************/
-$('.header-wrapper .bt-show').click(onNoticeShow)
-$('.header-wrapper .bt-hide').click(onNoticeHide)
-$('.header-wrapper .bt-close').click(onNoticeClose)
+$('.header-wrapper .bt-show').click(onShowNotice)
+$('.header-wrapper .bt-hide').click(onHideNotice)
+$('.header-wrapper .bt-close').click(onCloseNotice)
 
 
 /*************** 이벤트 콜백 *****************/
-function onNoticeShow() {
+function onShowNotice() {
 	$('.header-wrapper').find('.bt-show').hide()
 	$('.header-wrapper').find('.bt-hide').show()
 	$('.header-wrapper').find('.notice-content').show()
 }
 
-function onNoticeHide() {
+function onHideNotice() {
 	$('.header-wrapper').find('.bt-show').show()
 	$('.header-wrapper').find('.bt-hide').hide()
 	$('.header-wrapper').find('.notice-content').hide()
 }
 
-function onNoticeClose() {
+function onCloseNotice() {
 	$('.header-wrapper').find('.notice-wrapper').hide()
 }
