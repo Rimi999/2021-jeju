@@ -11,9 +11,9 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 
 
 /********************** header-wrapper *********************/
-.header-wrapper {font-size: 1em;}
-.header-wrapper > .notice-wrapper {background-color: #28354b; color: #f9f9f9;}
+.header-wrapper {font-size: 1em; position: fixed; width: 100%;}
 
+.header-wrapper > .notice-wrapper {background-color: #28354b; color: #f9f9f9;}
 .header-wrapper .notice-wrap {display: flex; align-items: center; padding: 1em 0;}
 .header-wrapper .notice-wrap > .notice-bullet {font-size: 0.875em; color:#b38859; width: 4rem;}
 .header-wrapper .notice-wrap > .notice-title {font-size: 1.25em; margin-right: 0.5rem;}
@@ -28,7 +28,13 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 
 
 
+.header-wrapper .top-wrapper {border-bottom: 1px solid #ddd;}
+.header-wrapper .link-wrap {padding: 1em 0; display: flex; justify-content: flex-end; align-items: flex-end;}
+.header-wrapper .link-wrap > .link {color: #f9f9f9; font-weight: 300;}
+.header-wrapper .link-wrap > .link:not(.navi-lang) {border-right: 1px solid #ddd; padding: 0 1.5em;}
 
+.header-wrapper .link-wrap > .link-lang {padding-left: 1.5em; position: relative;}
+.header-wrapper .link-wrap > .link-lang > .hover {background-color: #f9f9f9; color: inherit;}
 
 
 /********************** footer-wrapper *********************/
