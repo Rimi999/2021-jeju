@@ -3,16 +3,19 @@
 
 /********************** 글로벌 설정 *********************/
 html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
-.wrapper {max-width: calc(1400px+2em); margin: auto; padding: 0 1rem;}
+.wrapper {max-width: 1368px; margin: auto;}
 
 
 /********************** header-wrapper *********************/
 .header-wrapper {background-color: #28354b; color: #f9f9f9;}
-.notice-wrap {display: flex; align-items: center; padding: 1em;}
-.notice-wrap > .notice-bullet {font-size: 0.875em; color:#b38859; width: 4rem;}
-.notice-wrap > .notice-title {font-size: 1.25em; margin-right: 0.5rem;}
-.notice-wrap > .bt-down {cursor: pointer; margin-right: auto;}
-.notice-wrap > .bt-close {cursor: pointer; font-size: 1.75em;}
+
+.header-wrapper .notice-wrap {display: flex; align-items: center; padding: 1em 0;}
+.header-wrapper .notice-wrap > .notice-bullet {font-size: 0.875em; color:#b38859; width: 4rem;}
+.header-wrapper .notice-wrap > .notice-title {font-size: 1.25em; margin-right: 0.5rem;}
+.header-wrapper .notice-wrap > .bt-down {cursor: pointer; margin-right: auto;}
+.header-wrapper .notice-wrap > .bt-close {cursor: pointer; font-size: 1.75em;}
+
+.header-wrapper .notice-content {padding-left: 4rem;}
 
 
 /********************** footer-wrapper *********************/
@@ -25,7 +28,7 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 
 /********************** 반응형 설정 *********************/
 @media (max-width: 1399px) {
-	
+	.wrapper {width: calc(100% - 2rem);}
 }
 
 @media (max-width: 1199px) {
