@@ -4,8 +4,11 @@ init()
 
 /*************** 사용자 함수 *****************/
 function init() {
-	$('.header-wrapper').find('.notice-content').hide()
-	$('.header-wrapper').find('.bt-hide').hide()
+	if($.cooKie('hideNotice') === 'Y') onCloseNotice ()
+	else {
+		$('.header-wrapper').find('.notice-content').hide()
+		$('.header-wrapper').find('.bt-hide').hide()
+	}
 }
 
 
@@ -13,6 +16,7 @@ function init() {
 $('.header-wrapper .bt-show').click(onShowNotice)
 $('.header-wrapper .bt-hide').click(onHideNotice)
 $('.header-wrapper .bt-close').click(onCloseNotice)
+$('.header-wrapper .bt-close').click(onHideTodayNotice)
 
 
 /*************** 이벤트 콜백 *****************/
@@ -30,4 +34,8 @@ function onHideNotice() {
 
 function onCloseNotice() {
 	$('.header-wrapper').find('.notice-wrapper').hide()
+}
+
+function onHideTodayNotice() {
+	$.cooKie('hideNotice', 'Y', { expired: 1, path: '/' })
 }
