@@ -19,8 +19,8 @@ $('.header-wrapper .bt-close').click(onCloseNotice)
 $('.header-wrapper .bt-today').click(onHideTodayNotice)
 
 $('.header-wrapper .link-lang').click(onToggleLang)
-$('.header-wrapper .link-lang').mouesenter(onShowleLang)
-$('.header-wrapper .link-lang').mouesleave(onHideleLang)
+$('.header-wrapper .link-lang').mouseenter(onShowleLang)
+$('.header-wrapper .link-lang').mouseleave(onHideleLang)
 
 
 /*************** 이벤트 콜백 *****************/
@@ -47,12 +47,12 @@ function onHideTodayNotice() {
 
 
 function onToggleLang() {
-	$('.header-wrapper .link-lang .hovwr').toggle()
+	$('.header-wrapper .link-lang .hover').toggle()
 }
 
 function onShowleLang() {
-	$('.header-wrapper .link-lang .hovwr').show()
+	$('.header-wrapper .link-lang .hover').show()
 }
 function onHideleLang() {
-	$('.header-wrapper .link-lang .hovwr').hide()
+	$('.header-wrapper .link-lang .hover').hide()
 }
