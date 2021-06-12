@@ -21,6 +21,7 @@ $('.header-wrapper .bt-today').click(onHideTodayNotice)
 $('.header-wrapper .link-lang').click(onToggleLang)
 $('.header-wrapper .link-lang').mouseenter(onShowleLang)
 $('.header-wrapper .link-lang').mouseleave(onHideleLang)
+$('.header-wrapper .link-lang .lang').click(onChgLang)
 
 
 /*************** 이벤트 콜백 *****************/
@@ -45,7 +46,7 @@ function onHideTodayNotice() {
 	onCloseNotice()
 }
 
-
+// lang
 function onToggleLang() {
 	$('.header-wrapper .link-lang .hover').toggle()
 }
@@ -53,6 +54,15 @@ function onToggleLang() {
 function onShowleLang() {
 	$('.header-wrapper .link-lang .hover').show()
 }
+
 function onHideleLang() {
 	$('.header-wrapper .link-lang .hover').hide()
+}
+
+function onChgLang() {
+	var $spn = $(this).parent().prev().find('span')
+	var myLang = $(this).any()
+	var spanLang = $spn.text()
+	$span.text(myLang)
+	$(this).text(spanLang)
 }
