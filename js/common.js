@@ -60,9 +60,9 @@ function onHideleLang() {
 }
 
 function onChgLang() {
-	var $spn = $(this).parent().prev().find('span')
-	var myLang = $(this).any()
-	var spanLang = $spn.text()
+	var $span = $(this).parent().prev().find('span')
+	var myLang = $(this).text()
+	var spanLang = $span.text()
 	$span.text(myLang)
 	$(this).text(spanLang)
 }
