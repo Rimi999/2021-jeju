@@ -6,63 +6,75 @@ initCommon ()
 function initCommon() {
 	if($.cookie('hideNotice') === 'Y') onCloseNotice ()
 	else {
-		$('.header-wrapper').find('.notice-content').hide()
-	$('.header-wrapper').find('.bt-hide').hide()
+		$('.notice-wrapper').find('.notice-content').hide()
+		$('.notice-wrapper').find('.bt-hide').hide()
 	}
 }
 
 
 /*************** 이벤트 등록 *****************/
-$('.header-wrapper .bt-show').click(onShowNotice)
-$('.header-wrapper .bt-hide').click(onHideNotice)
-$('.header-wrapper .bt-close').click(onCloseNotice)
-$('.header-wrapper .bt-today').click(onHideTodayNotice)
+$(window).scroll(onScroll).trigger('scroll')
+
 
 $('.header-wrapper .link-lang').click(onToggleLang)
 $('.header-wrapper .link-lang').mouseenter(onShowleLang)
 $('.header-wrapper .link-lang').mouseleave(onHideleLang)
 $('.header-wrapper .link-lang .lang').click(onChgLang)
 
+$('.notice-wrapper .bt-show').click(onShowNotice)
+$('.notice-wrapper .bt-hide').click(onHideNotice)
+$('.notice-wrapper .bt-close').click(onCloseNotice)
+$('.notice-wrapper .bt-today').click(onHideTodayNotice)
+
 
 /*************** 이벤트 콜백 *****************/
-function onShowNotice() {
-	$('.header-wrapper').find('.bt-show').hide()
-	$('.header-wrapper').find('.bt-hide').show()
-	$('.header-wrapper').find('.notice-content').show()
-}
+function onScroll(e) {
+	var scTop = {} 
 
-function onHideNotice() {
-	$('.header-wrapper').find('.bt-show').show()
-	$('.header-wrapper').find('.bt-hide').hide()
-	$('.header-wrapper').find('.notice-content').hide()
-}
-
-function onCloseNotice() {
-	$('.header-wrapper').find('.notice-wrapper').hide()
-}
-
-function onHideTodayNotice() {
-	$.cookie('hideNotice', 'Y', { expired: 1, path: '/' })
-	onCloseNotice()
+	/**** notice-wrapper 제어 ****/ 
 }
 
 // lang
-function onToggleLang() {
+function onToggleLang(e) {
 	$('.header-wrapper .link-lang .hover').toggle()
 }
 
-function onShowleLang() {
+function onShowleLang(e) {
 	$('.header-wrapper .link-lang .hover').show()
 }
 
-function onHideleLang() {
+function onHideleLang(e) {
 	$('.header-wrapper .link-lang .hover').hide()
 }
 
-function onChgLang() {
+function onChgLang(e) {
 	var $span = $(this).parent().prev().find('span')
 	var myLang = $(this).text()
 	var spanLang = $span.text()
 	$span.text(myLang)
 	$(this).text(spanLang)
 }
+
+//notice
+function onShowNotice(e) {
+	$('.notice-wrapper').find('.bt-show').hide()
+	$('.notice-wrapper').find('.bt-hide').show()
+	$('.notice-wrapper').find('.notice-content').show()
+}
+
+function onHideNotice(e) {
+	$('.notice-wrapper').find('.bt-show').show()
+	$('.notice-wrapper').find('.bt-hide').hide()
+	$('.notice-wrapper').find('.notice-content').hide()
+}
+
+function onCloseNotice(e) {
+	$('.notice-wrapper').hide()
+}
+
+function onHideTodayNotice(e) {
+	$.cookie('hideNotice', 'Y', { expired: 1, path: '/' })
+	onCloseNotice()
+}
+
+
