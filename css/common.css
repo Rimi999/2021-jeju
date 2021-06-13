@@ -7,8 +7,8 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 
 .bt-ghost {padding: 0.87em 1.75em; border: 1px solid #999; color: #fff; transition: all 0.5s;}
 .bt-ghost:hover {background-color: #fff; color: #b38859; }
-.bt-ghost.gold {border: 1px solid #b38859;;}
-.bt-ghost.gold:hover {background-color:#b38859; color: #fff;;}
+.bt-ghost.gold {border: 1px solid #fff;}
+.bt-ghost.gold:hover {background-color:#b38859; color: #fff; !important;}
 .bt-anchor {text-decoration: underline;}
 
 
@@ -29,8 +29,8 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 
 .header-wrapper > .top-wrapper {color: #fff;}
 .header-wrapper > .top-wrapper:hover {color: rgba(0, 0, 0, 0.5); background-color: #fff;}
-.header-wrapper > .top-wrapper:hover .link-wrapper {border-bottom: 1px solid #ddd;}
 
+.header-wrapper > .top-wrapper:hover .link-wrapper {border-bottom: 1px solid #ddd;}
 .header-wrapper > .top-wrapper:hover .link-wrapper {border-bottom: 1px solid #ddd;}
 .header-wrapper .link-wrapper {border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
 .header-wrapper .link-wrap {padding: 1em 0; display: flex; justify-content: flex-end; align-items: flex-end;}
@@ -44,7 +44,18 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 .header-wrapper .link-lang .bt-lang::before {transition: transform 1s; font-size: 0.75em;}
 .header-wrapper .link-lang :hover .bt-lang::before {transform: rotate(180deg);}
 
-
+.header-wrapper > .top-wrapper:hover .logo-white {display: none;}
+.header-wrapper > .top-wrapper:hover .logo-color {display: inline-block;}
+.header-wrapper > .top-wrapper:hover .bt-ghost.gold {color: #b38859; border: 1px solid #b38859;}
+.header-wrapper .navi-wrapper > .wrapper {display: flex; padding: 1.5em 0;}
+.header-wrapper .logo-wrap {order: 2; flex: 0 0 254px;}
+.header-wrapper .logo-wrap .logo-color {display: none;}
+.header-wrapper .navi-wrap {flex: 0 0 calc(50%-127px); display: flex; align-items: center;}
+.header-wrapper .navi-wrap-lt {order: 1;}
+.header-wrapper .navi-wrap-rt {order: 3; justify-content: flex-end;}
+.header-wrapper .navi-wrap > .navi {margin: 0 2em;}
+.header-wrapper .navi-wrap > .navi:first-child {margin-left: 0;}
+.header-wrapper .navi-wrap > .navi:last-child {margin-right: 0;}
 
 
 /********************** footer-wrapper *********************/
