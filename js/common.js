@@ -29,25 +29,40 @@ $('.notice-wrapper .bt-today').click(onHideTodayNotice)
 
 /*************** 이벤트 콜백 *****************/
 function onScroll(e) {
-	var scTop = {} 
-
-	/**** notice-wrapper 제어 ****/ 
+	var scTop = $(this).scrollTop()
+	var headerGap = $('.notice-wrapper').outerHeight()
+	var noticeHeight = $('.notice-wrapper').outerHeight()
+	/**** notice-wrapper 제어 ****/
+	if(scTop > 0) {
+		$('.notice-wrapper').hide()
+		$('.notice-wrapper').css('top', noticeHeight + 'px')
+	}
+	else {
+		$('.notice-wrapper').show()
+		$('.notice-wrapper').css('top', 'upset')
+	}
+	if(headGap < scTop ){
+		$('.header-wrapper').css({'position':'fixed', 'top': 0})
+	}
+	else{
+		$('.header-wrapper').css({'position':'absolute', 'top':'unset'})
+	}
 }
 
 // lang
-function onToggleLang(e) {
+function onToggleLang() {
 	$('.header-wrapper .link-lang .hover').toggle()
 }
 
-function onShowleLang(e) {
+function onShowleLang() {
 	$('.header-wrapper .link-lang .hover').show()
 }
 
-function onHideleLang(e) {
+function onHideleLang() {
 	$('.header-wrapper .link-lang .hover').hide()
 }
 
-function onChgLang(e) {
+function onChgLang() {
 	var $span = $(this).parent().prev().find('span')
 	var myLang = $(this).text()
 	var spanLang = $span.text()
@@ -56,23 +71,23 @@ function onChgLang(e) {
 }
 
 //notice
-function onShowNotice(e) {
+function onShowNotice() {
 	$('.notice-wrapper').find('.bt-show').hide()
 	$('.notice-wrapper').find('.bt-hide').show()
 	$('.notice-wrapper').find('.notice-content').show()
 }
 
-function onHideNotice(e) {
+function onHideNotice() {
 	$('.notice-wrapper').find('.bt-show').show()
 	$('.notice-wrapper').find('.bt-hide').hide()
 	$('.notice-wrapper').find('.notice-content').hide()
 }
 
-function onCloseNotice(e) {
+function onCloseNotice() {
 	$('.notice-wrapper').hide()
 }
 
-function onHideTodayNotice(e) {
+function onHideTodayNotice() {
 	$.cookie('hideNotice', 'Y', { expired: 1, path: '/' })
 	onCloseNotice()
 }
