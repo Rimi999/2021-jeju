@@ -11,25 +11,29 @@ function initCommon() {
 	}
 }
 
+
 function scrollNotice(scTop){
-	var noticeHeight = $('.notice-wrapper').outerHeight()
-	if(scTop > 0) {
-		$('.notice-wrapper').hide()
-		$('.notice-wrapper').css('top', noticeHeight + 'px')
+	var $notice = $('.notice-wrapper')
+	var $link   = $('.link-wrapper')
+	var $navi   = $('.navi-wrapper')
+	var $header = $('.header-wrapper')
+	var noticeHeight, linkHeight, naviHeight, headerHeight
+	if(scTop == 0){
+		$notice.show()
+		$link.show()
+		$header.css('top','unset')
+	}
+	else if (scTop < 150) {
+		$notice.hide()
+		$link.hide()
+		$header.css('top','unset')
 	}
 	else {
-		$('.notice-wrapper').show()
-		$('.notice-wrapper').css('top', 'upset')
-	}
-}
-
-function scrollHeader(scTop) {
-	var headerGap = $('.notice-wrapper').outerHeight()
-	if(headGap < scTop ){
-		$('.header-wrapper').css({'position':'fixed', 'top': 0})
-	}
-	else{
-		$('.header-wrapper').css({'position':'absolute', 'top':'unset'})
+		$notice.hide()
+		$link.hide()
+		$header.css('top',-headerHeight+'px')
+		$header.css('top')
+		$header.css('top', 0)
 	}
 }
 
@@ -52,7 +56,6 @@ $('.notice-wrapper .bt-today').click(onHideTodayNotice)
 function onScroll(e) {
 	var scTop = $(this).scrollTop()
 	scrollNotice(scTop)
-	scrollHeader(scTop)
 }
 
 // lang
