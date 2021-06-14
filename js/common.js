@@ -15,18 +15,19 @@ function initCommon() {
 function scrollNotice(scTop){
 	var $notice = $('.notice-wrapper')
 	var $link   = $('.link-wrapper')
-	var $navi   = $('.navi-wrapper')
 	var $header = $('.header-wrapper')
-	var noticeHeight, linkHeight, naviHeight, headerHeight
+	var headerHeight
 	if(scTop == 0){
 		$notice.show()
 		$link.show()
 		$header.css('top','unset')
+		$header.removeClass('active')
 	}
 	else if (scTop < 150) {
 		$notice.hide()
 		$link.hide()
 		$header.css('top','unset')
+		$header.removeClass('active')
 	}
 	else {
 		$notice.hide()
@@ -34,6 +35,7 @@ function scrollNotice(scTop){
 		$header.css('top',-headerHeight+'px')
 		$header.css('top')
 		$header.css('top', 0)
+		$header.addClass('active')
 	}
 }
 
