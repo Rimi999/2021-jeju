@@ -40,8 +40,10 @@ function scrollNotice(scTop){
 }
 
 /*************** 이벤트 등록 *****************/
-$(window).scroll(onScroll).trigger('scroll')
+$('.header-wrapper .navi').mouseenter(onNaviEnter)
+$('.header-wrapper .navi').mouseleave(onNaviLeave)
 
+$(window).scroll(onScroll).trigger('scroll')
 
 $('.header-wrapper .link-lang').click(onToggleLang)
 $('.header-wrapper .link-lang').mouseenter(onShowleLang)
@@ -55,6 +57,19 @@ $('.notice-wrapper .bt-today').click(onHideTodayNotice)
 
 
 /*************** 이벤트 콜백 *****************/
+function onNaviEnter() {
+	$('.header-wrapper .sub-wrapper').hide()
+	$(this).find('sub-wrapper').show()
+	$('.header-wrapper .navi').removeClass('active')
+	$(this).addClass('active')
+}
+
+function onNaviLeave() {
+	$('.header-wrapper .sub-wrapper').hide()
+	$('.header-wrapper .navi').removeClass('active')
+}
+
+// scroll
 function onScroll(e) {
 	var scTop = $(this).scrollTop()
 	scrollNotice(scTop)
