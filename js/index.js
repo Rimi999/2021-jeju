@@ -1,7 +1,7 @@
 /*************** 글로벌 설정 *****************/
 var $mainWrapper = $('.main-wrapper')
 var $mainSlide = $('.main-wrapper .slide')
-var mainLen =  $mainSlide.length
+var mainLen = $mainSlide.length
 var mainLastIdx = mainLen - 1
 var mainDepth = 2
 var mainIdx = 0
@@ -9,6 +9,7 @@ var mainGap = 3000
 var mainSpeed = 500
 var mainInterval
 initMain()
+
 
 /*************** 사용자 함수 *****************/
 function initMain() {
