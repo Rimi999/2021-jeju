@@ -82,7 +82,7 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 .header-wrapper .sub-wrap .list {margin-bottom: 1em;}
 
 .header-wrapper .navi > .sub-wrapper.stay {width: 540px; left: -50px; display: none;}
-.header-wrapper .navi > .sub-wrapper.wine {width: 100px;  display: none;}
+.header-wrapper .navi > .sub-wrapper.wine {width: 1100px; left: -220; display: none;}
 .header-wrapper .navi > .sub-wrapper.things {width: 600px; right: -210px; display: none;}
 
 

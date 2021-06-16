@@ -11,7 +11,6 @@ function initCommon() {
 	}
 }
 
-
 function scrollNotice(scTop){
 	var $notice = $('.notice-wrapper')
 	var $link   = $('.link-wrapper')
@@ -59,7 +58,7 @@ $('.notice-wrapper .bt-today').click(onHideTodayNotice)
 /*************** 이벤트 콜백 *****************/
 function onNaviEnter() {
 	$('.header-wrapper .sub-wrapper').hide()
-	$(this).find('sub-wrapper').show()
+	$(this).find('.sub-wrapper').show()
 	$('.header-wrapper .navi').removeClass('active')
 	$(this).addClass('active')
 }
