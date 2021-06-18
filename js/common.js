@@ -6,7 +6,7 @@ $(function() {
 
 
 	/*************** 사용자 함수 *****************/
-	function initCommon() {
+	function init() {
 	if($.cookie('hideNotice') === 'Y') onCloseNotice()
 	else {
 		$('.notice-wrapper').find('.notice-content').hide()

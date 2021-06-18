@@ -5,6 +5,12 @@
 .main-wrapper .slide > video
 {min-width: 100%; min-height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
+.main-wrapper .slide > .slide-body {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.main-wrapper .slide .slide-title {font-size: 5em; ;font-weight :500; color: #fff; }
+.main-wrapper .slide .bt-video {font-size: 1.25em; color: #fff; display: flex; align-items: center; justify-content: center;}
+.main-wrapper .slide .bt-video i {font-size: 1.25em; margin-right: 0.5em; margin-top: -5px;}
+
+
 
 /********************** dream-wrapper *********************/
 
