@@ -17,21 +17,36 @@ $(function() {
 	/*************** 사용자 함수 *****************/
 	function init() {
 		$slide.eq(idx).css('z-index', depth++)
+		$slide.eq(idx).addClass('active')
 		onAni()
 	}
 
 
 	/*************** 이벤트 등록 *****************/
+	video.addEventListener('loadeddata', onLoadedVideo)
+	video.addEventListener('ended', onPlay)
+
 
 
 	/*************** 이벤트 콜백 *****************/
-	function onAni() {
-		if($slide.eq(idx).hasClass('is-video')) {
-
+	function onLoadedVideo() {
+		if(video.readyState >= 2) {
+			video.playbackRate = 4.0
 		}
+	}
+	
+	function onAni() {
+		$(this).addClass('active')
+		video.currentTime = 0
+		if($slide.eq(idx).hasClass('is-video')) video.play()
+		else setTimeout(onPlay, gap)
+	}
+
+	function onPlay() {
 		idx = (idx == lastIdx) ? 0 : idx + 1
 		$slide.eq(idx).css({'z-index': depth++, 'left': '100%'})
-		$slide.eq(idx).stop().animate({'left':0}, speed)
+		$slide.removeClass('active')
+		$slide.eq(idx).stop().animate({'left': 0}, speed, onAni)
 	}
 
 })
