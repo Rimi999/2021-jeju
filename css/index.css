@@ -45,7 +45,10 @@
 
 
 /********************** cookie-wrapper *********************/
-
+.cookie-wrapper {position: fixed; z-index: 100; width: 100%; left: 0; bottom: 0; background: rgba(0, 0, 0, .7); backdrop-filter: blur(6px); padding: 3em 0; color: #fff;}
+.cookie-wrapper .cont-wrap {display: flex; justify-content: space-between;}
+.cookie-wrapper .cont-wrap > p {flex: 90% 0 1; font-size: 1.125em; font-weight: 300; line-height: 1.75; margin-bottom: 1em;}
+.cookie-wrapper .cont-wrap > i {font-size: 2em; cursor: pointer;}
 
 /********************** modal-wrapper *********************/
 .modal-video .modal-wrap {flex: 80% 0 1;}
