@@ -26,8 +26,8 @@ $(function() {
 	video.addEventListener('loadeddata', onLoadedVideo)
 	video.addEventListener('ended', onPlay)
 
-	$('bt-video').click(onModalVideo)
-	$('modal-video').find('bt-close').click(onModalVideoClose)
+	$('.bt-video').click(onModalVideo)
+	$('.modal-video').find('bt-close').click(onModalVideoClose)
 
 
 	/*************** 이벤트 콜백 *****************/

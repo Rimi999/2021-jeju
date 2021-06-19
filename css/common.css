@@ -6,9 +6,9 @@
 
 /********************** 글로벌 설정 *********************/
 html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; height: 10000px;}
-.wrapper {max-width: 1368px; margin: auto;}
+.wrapper {width: 1368px; margin: auto;}
 
-.bt-ghost {padding: 0.87em 1.75em; border: 1px solid #999; color: #fff; transition: all 0.5s;}
+.bt-ghost {padding: 0.875em 1.75em; border: 1px solid #999; color: #fff; transition: all 0.5s;}
 .bt-ghost:hover {background-color: #fff; color: #b38859;}
 .bt-ghost.gold {border: 1px solid #fff;}
 .bt-ghost.gold:hover {background-color:#b38859; color: #fff !important;}
