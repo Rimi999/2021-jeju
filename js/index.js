@@ -26,9 +26,21 @@ $(function() {
 	video.addEventListener('loadeddata', onLoadedVideo)
 	video.addEventListener('ended', onPlay)
 
+	$('bt-video').click(onModalVideo)
+	$('modal-video').find('bt-close').click(onModalVideoClose)
 
 
 	/*************** 이벤트 콜백 *****************/
+	//mainmodel
+	function onModalVideoClose() {
+		$('.modal-video').hide()
+	}
+
+	function onModalVideo() {
+		$('.modal-video').show()
+	}
+
+	//mainSlide
 	function onLoadedVideo() {
 		if(video.readyState >= 2) {
 			video.playbackRate = 4.0
