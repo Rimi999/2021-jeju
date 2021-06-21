@@ -14,7 +14,7 @@ $(function() {
 	var $slide = $('.main-wrapper .slide')
 	var $pagerSlide = $('.main-wrapper .pager-slide')
 	var video = $('.main-wrapper .video')[0]
-	var $weather = $('.main-wrapper .weather')
+	var $weather = $('.main-wrapper .weather') 
 	var len = $slide.length
 	var lastIdx = len - 1
 	var depth = 2
@@ -24,8 +24,8 @@ $(function() {
 	var timeout
 	var weatherURL = 'https://api.openweathermap.org/data/2.5/weather'
 	var weatherData = {
-		appid: '4a25235891e03dd674f2b7ba12cbf13a', //my key
-		units: 'methric'
+		appid: '02efdd64bdc14b279bc91d9247db4722',
+		units: 'metric'
 	}
 	var weatherIcon = {
 		i01d: 'bi-brightness-high',
@@ -45,10 +45,10 @@ $(function() {
 		i13d: 'bi-cloud-snow',
 		i13n: 'bi-cloud-snow-fill',
 		i50d: 'bi-cloud-haze',
-		i50n: 'bi-cloud-haze-fill'
+		i50n: 'bi-cloud-haze-fill',
 	}
 	init()
-	
+	weather()
 	
 	/*************** 사용자 함수 *****************/
 	function init() {
@@ -65,11 +65,15 @@ $(function() {
 		ani()
 	}
 
+	function weather() {
+		// 위치정보 가져오기(못 가져오면 제주도 보이기 33.485739737138786, 126.48154043372092)
+		navigator.geolocation.getCurrentPosition(onGetGeo, onErrorGeo)
+	}
+
 
 	/*************** 이벤트 등록 *****************/
 	video.addEventListener('loadeddata', onLoadedVideo)
 	video.addEventListener('ended', onPlay)
-	
 	$('.bt-video').click(onModalVideo)
 	$('.modal-video').find('.bt-close').click(onModalVideoClose)
 	$('.cookie-wrapper').find('.bt-close').click(onCookieClose)
@@ -77,6 +81,26 @@ $(function() {
 
 
 	/*************** 이벤트 콜백 *****************/
+	function onGetWeather(r) {
+		$weather.find('.icon').addClass(weatherIcon['i'+r.weather[0].icon])
+		$weather.find('.temp').text(r.main.temp)
+		$weather.find('.date').text(moment(r.dt * 1000).format('YYYY. M. D. ddd'))
+		$weather.find('.time > span').text(moment(r.dt * 1000).format('hh:mm'))
+		$weather.find('.time > small').text(moment(r.dt * 1000).format('A'))
+	}
+
+	function onGetGeo(r) {
+		weatherData.lat = r.coords.latitude
+		weatherData.lon = r.coords.longitude
+		$.get(weatherURL, weatherData, onGetWeather)
+	}
+
+	function onErrorGeo() {
+		weatherData.lat = 33.485739737138786
+		weatherData.lon = 126.48154043372092
+		$.get(weatherURL, weatherData, onGetWeather)
+	}
+
 	function onPagerClick() {
 		idx = $(this).index()
 		onPlay('pager')
@@ -85,15 +109,15 @@ $(function() {
 	function onCookieClose() {
 		$('.cookie-wrapper').hide()
 	}
-	
-	function onModalVideoClose() {
-		$('.modal-video').hide()
-	}
-	
+
 	function onModalVideo() {
 		$('.modal-video').show()
 	}
-	
+
+	function onModalVideoClose() {
+		$('.modal-video').hide()
+	}
+
 	function onLoadedVideo() {
 		if(video.readyState >= 2) {
 			video.playbackRate = 4.0
