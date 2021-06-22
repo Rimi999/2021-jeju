@@ -52,6 +52,10 @@ $(function() {
 	
 	/*************** 사용자 함수 *****************/
 	function init() {
+		if($.cookie('hideCookie') === 'Y') onCloseCookie()
+		$slide.eq(idx).css('z-index', depth++)
+		$slide.eq(idx).addClass('active')
+
 		$slide.eq(idx).css('z-index', depth++)
 		$slide.eq(idx).addClass('active')
 
@@ -74,20 +78,19 @@ $(function() {
 	/*************** 이벤트 등록 *****************/
 	video.addEventListener('loadeddata', onLoadedVideo)
 	video.addEventListener('ended', onPlay)
-
 	$('.bt-video').click(onModalVideo)
 	$('.modal-video').find('.bt-close').click(onModalVideoClose)
 	$('.cookie-wrapper').find('.bt-close').click(onCloseCookie)
 	$('.cookie-wrapper').find('.bt-confirm').click(onCloseTodayCookie)
 
 
-
 	/*************** 이벤트 콜백 *****************/
-	function onCloseTodayCookie(){
+	function onCloseTodayCookie() {
 		$.cookie('hideCookie', 'Y', { expires: 1, path: '/' })
 		onCloseCookie()
 	}
-	
+
+
 	function onGetWeather(r) {
 		$weather.find('.icon').addClass(weatherIcon['i'+r.weather[0].icon])
 		$weather.find('.temp').text(r.main.temp)
