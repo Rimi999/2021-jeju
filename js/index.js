@@ -74,13 +74,20 @@ $(function() {
 	/*************** 이벤트 등록 *****************/
 	video.addEventListener('loadeddata', onLoadedVideo)
 	video.addEventListener('ended', onPlay)
+
 	$('.bt-video').click(onModalVideo)
 	$('.modal-video').find('.bt-close').click(onModalVideoClose)
-	$('.cookie-wrapper').find('.bt-close').click(onCookieClose)
+	$('.cookie-wrapper').find('.bt-close').click(onCloseCookie)
+	$('.cookie-wrapper').find('.bt-confirm').click(onCloseTodayCookie)
 
 
 
 	/*************** 이벤트 콜백 *****************/
+	function onCloseTodayCookie(){
+		$.cookie('hideCookie', 'Y', { expires: 1, path: '/' })
+		onCloseCookie()
+	}
+	
 	function onGetWeather(r) {
 		$weather.find('.icon').addClass(weatherIcon['i'+r.weather[0].icon])
 		$weather.find('.temp').text(r.main.temp)
@@ -106,7 +113,7 @@ $(function() {
 		onPlay('pager')
 	}
 
-	function onCookieClose() {
+	function onCloseCookie() {
 		$('.cookie-wrapper').hide()
 	}
 
