@@ -12,6 +12,8 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 .bt-ghost:hover {background-color: #fff; color: #b38859;}
 .bt-ghost.gold {border: 1px solid #fff;}
 .bt-ghost.gold:hover {background-color:#b38859; color: #fff !important;}
+.bt-ghost.white {border: 1px solid #ccc; color: #999;}
+.bt-ghost.white:hover {background-color: #b38859; color: #fff !important;}
 .bt-ghost.angle::after {content: '〉'; display: inline-block; margin-left: 0.5em; margin-right: -0.5em;}
 .bt-anchor {text-decoration: underline;}
 
