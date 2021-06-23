@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
-	<link rel="stylesheet" href="../css/all.min.css">
-	<link rel="stylesheet" href="../css/bootstrap-icons.css">
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/animate.compat.css">
-	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="../css/common.css">
-	<link rel="stylesheet" href="../css/index.css">
-	<script src="../js/jquery-3.6.0.min.js"></script>
-	<script src="../js/jquery.cookie.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/moment.min.js"></script>
-	<script src="../js/util.js"></script>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" href="../css/all.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-icons.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+		<link rel="stylesheet" href="../css/animate.compat.css">
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/common.css">
+		<link rel="stylesheet" href="../css/index.css">
+		<script src="../js/jquery-3.6.0.min.js"></script>
+		<script src="../js/swiper-bundle.min.js"></script>
+		<script src="../js/jquery.cookie.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/moment.min.js"></script>
+		<script src="../js/util.js"></script>
+	</head>
 
 <body>
 	<!-- .notice-wrapper -->
@@ -42,6 +44,7 @@
 			</div>
 		</div>
 	</header>
+
 	<!-- header-wrapper -->
 	<header class="header-wrapper">
 		<div class="link-wrapper">
@@ -174,7 +177,7 @@
 	</header>
 
 	<!-- main-wrapper -->
-	<section class="main-wrapper">
+	<div class="main-wrapper">
 		<div class="slide-stage">
 			<div class="slide-wrap">
 				<div class="slide is-video">
@@ -251,17 +254,16 @@
 			</ul>
 		</div>
 	</div>
-	</section>
 
 	<!-- dream-wrapper -->
 	<section class="dream-wrapper">
 		<div class="wrapper">
 			<div class="title-wrap">
-				<h2 class="title">>DREAM OFFERS</h2>
+				<h2 class="title">DREAM OFFERS</h2>
 				<h4 class="title">당신이 꿈꾸는 여행의 모든 것 - 제주 드림타워가 특별히 준비한 추천 상품을 확인 해 보세요.</h4>
 			</div>
 			<div class="slide-stage">
-				<div class="slide-container">
+				<div class="swiper-container">
 					<ul class="slide-wrap swiper-wrapper">
 						<li class="slide swiper-slide">
 							<div class="img-wrap">
@@ -325,9 +327,18 @@
 						</li>
 					</ul>
 				</div>
+				<div class="pager-wrapper pager-slide"></div>
+				<i class="bt-slide left bi-chevron-left"></i>
+				<i class="bt-slide right bi-chevron-right"></i>
+				<div class="box left"></div>
+				<div class="box right"></div>
+			</div>
+			<div class="bt-wrap">
+				<button class="bt-ghost white">전체보기</button>
 			</div>
 		</div>
 	</section>
+
 
 	<!-- promo-wrapper -->
 	<section class="promo-wrapper">

@@ -67,6 +67,7 @@ $(function() {
 			$('<i class="pager"></i>').appendTo($pagerSlide).click(onPagerClick).addClass((idx === i) ? 'active': '')
 		} */
 		ani()
+		slideDream()
 	}
 
 	function weather() {
@@ -74,6 +75,38 @@ $(function() {
 		navigator.geolocation.getCurrentPosition(onGetGeo, onErrorGeo)
 	}
 
+	function slideDream() {
+		var swiper = new Swiper('.dream-wrapper .swiper-container', {
+			pagination: {
+				el: '.dream-wrapper .pager-wrapper',
+				clickable: true
+			},
+			navigation: {
+				nextEl: '.dream-wrapper .bt-slide.right',
+				prevEl: '.dream-wrapper .bt-slide.left',
+			},
+			autoplay: {
+				delay: 3000,
+			},
+			loop: true,
+			slidesPerView: 1,
+			spaceBetween: 40,
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+				},
+				992: {
+					slidesPerView: 3,
+				}
+			}
+		});
+
+		$('.dream-wrapper .slide-stage').hover(function(){
+			swiper.autoplay.stop()
+		}, function(){
+			swiper.autoplay.start()
+		})
+	}
 
 	/*************** 이벤트 등록 *****************/
 	video.addEventListener('loadeddata', onLoadedVideo)
