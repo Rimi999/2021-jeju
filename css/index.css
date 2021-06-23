@@ -1,9 +1,9 @@
 body > section {position: relative; z-index: 3; min-height: 100vh; background-color: aqua;}
 
-.title-wrap {text-align: center; margin-bottom: 3em; }
-.title-wrap {font-size: 3.5em; margin-bottom: 0.25em; font-size: 'Jost', sans-serif; letter-spacing: 0.05em;}
-.title-wrap {font-size: 2em; margin-bottom: 0.175em;}
-.title-wrap {font-size: 1.125em; margin-bottom: 0.125em; color: #888;}
+.title-wrap {text-align: center; margin-bottom: 3em;}
+.title-wrap h2.title {font-size: 3.5em; margin-bottom: .25em; font-family: 'Jost', sans-serif; letter-spacing: .05em;}
+.title-wrap h3.title {font-size: 2em; margin-bottom: .175em;}
+.title-wrap h4.title {font-size: 1.125em; margin-bottom: .125em; color: #888;}
 
 
 /********************** main-wrapper *********************/
@@ -59,15 +59,24 @@ body > section {position: relative; z-index: 3; min-height: 100vh; background-co
 .dream-wrapper {background-image: linear-gradient(#fff, #fff 40%, #eee 40%, #eee); overflow: hidden;}
 .dream-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
 .dream-wrapper .slide-stage > .swiper-container {width: calc(100% - 60px); overflow: visible;}
-.dream-wrapper .slide-stage .slide {cursor: pointer}
+.dream-wrapper .slide-stage .slide {cursor: pointer;}
 .dream-wrapper .slide-stage .cont-wrap {padding: 8%; min-height: 220px; position: relative; background-color: #fff; border: 1px solid #ddd;}
 .dream-wrapper .slide-stage .img-wrap {overflow: hidden;}
 .dream-wrapper .slide-stage .img-wrap img {transition: all 1s;}
 .dream-wrapper .slide-stage .img-wrap:hover img {transform: scale(1.1);}
 .dream-wrapper .slide-stage .cont-wrap .title {font-size: 1.75em; margin-bottom: 0.5em;}
 .dream-wrapper .slide-stage .cont-wrap .desc {font-size: 1.125em; color: #888; line-height: 1.5;}
-.dream-wrapper .slide-stage .cont-wrap .tag {font-size: 1em; color: #fff; background-color: #ff5100; padding: 0 0.75em;
+.dream-wrapper .slide-stage .cont-wrap .tag {font-size: 1em; color: #fff; background-color: #ff5100; padding: 0 .75em;
 	position: absolute; height: 26px; line-height: 26px; border-radius: 13px; top: -13px; left: 10%;}
+.dream-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 2em; position: absolute; width: 100%;}
+.dream-wrapper .slide-stage .pager-slide .swiper-pagination-bullet-active {border: 1px solid #b38859;}
+.dream-wrapper .slide-stage .box {width: 200%; height: 100%; position: absolute; top: 0; z-index: 15;}
+.dream-wrapper .slide-stage .box.left {left: calc(-200% - 10px); background-image: linear-gradient(to left, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
+.dream-wrapper .slide-stage .box.right {right: calc(-200% - 10px); background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
+
+.dream-wrapper .bt-wrap {text-align: center;}
+.dream-wrapper .bt-wrap .bt-ghost.white {padding: 1em 3em;}
+
 
 /********************** promo-wrapper *********************/
 
