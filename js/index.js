@@ -19,6 +19,7 @@ $(function () {
 		setCookie()
 		slideMain()
 		slideDream()
+		slidePromo()
 	}
 
 	function setCookie() {
@@ -195,6 +196,30 @@ $(function () {
 		}, function(){
 			swiper.autoplay.start()
 		})
+	}
+
+	function slidePromo() {
+		var $promWrapper = $('.promo-wrapper')
+		var $slideWrap = $promWrapper.find('.slide-wrap')
+
+		function onGetData(r) {
+			// for (var i=0; i<r.promo.length; i++) {}
+			r.promo.forEach(function(v,i) {
+				var html = ''
+				html += '<li class="slide swiper-slide">'
+				html += '<div class="img-wrap ratio" data-ratio="1">'
+				html += '<div class="ratio-bg" style="background-image: url('+v.src+');"></div>'
+				html += '</div>'
+				html += '<div class="cont-wrap">'
+				html += '<h3 class="title">'+v.title+'</h3>'
+				html += '<div class="desc">'+v.desc+'</div>'
+				html += '</div>'
+				html += '</li>'
+				$slideWrap.append(html)
+			})
+			var swiper = getSwiper('.prom-wrapper', {break: 4})
+		}
+		$.get('../json/promotion.json', onGetData) //init
 	}
 
 })
